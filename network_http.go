@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/samuel/go-socks/socks"
-	"fmt"
 )
 
 func ScanHTTP(onion string) bool {
