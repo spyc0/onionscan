@@ -6,5 +6,5 @@ Note that this is a work in progress.
 
 #### Install
 
-1. `go get github.com/norwack/onionscan
+1. `go get github.com/norwack/onionscan`
   + If $GOPATH/bin is in your path, you can run it by executing `onionscan myonionlist.txt`
