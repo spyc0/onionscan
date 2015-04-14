@@ -1,12 +1,15 @@
 package main
 
 import (
-	"h12.me/socks"
+	"github.com/samuel/go-socks/socks"
+	"fmt"
 )
 
 func ScanHTTP(onion string) bool {
-	conn, err := socks.DialSocks5("127.0.0.1:9050", onion)
+	proxy := &socks.Proxy{Addr: "127.0.0.1:9050"}
+	conn, err := proxy.Dial("tcp", onion + ":80")
 	if err != nil {
+		fmt.Println(err)
 		return false
 	}
 	defer conn.Close()
