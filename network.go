@@ -6,7 +6,7 @@ import (
 )
 
 type Network struct {
-	Conn  *socks.Proxy
+	Conn  *net.Conn
 }
 
 func Connect(host string) (*Network, error) {
