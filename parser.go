@@ -15,7 +15,10 @@ func ParseOnions(filename string) map[string]map[string]string {
 	Onions := make(map[string]map[string]string)
 	LineScanner := bufio.NewScanner(OnionsFile)
 	for LineScanner.Scan() {
-		if len(LineScanner.Text()) < 3 {
+		if len(LineScanner.Text()) == 0 {
+			continue
+		}
+		if len(strings.Split(LineScanner.Text(), "|")) < 3 {
 			fmt.Printf("Invalid/Not onion list\n")
 			os.Exit(1)
 		}
