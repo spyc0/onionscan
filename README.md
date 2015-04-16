@@ -8,4 +8,4 @@ Note that this is a work in progress.
 
 1. `go get -u github.com/norwack/onionscan`
   + If $GOPATH/bin is in your path, you can run it by executing `onionscan myonionlist.txt`
-  +  Will pull in [https://github.com/samuel/go-socks/](as a dependency).
+  +  Will pull in [go-socks as a dependency](https://github.com/samuel/go-socks/).
