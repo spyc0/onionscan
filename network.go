@@ -6,7 +6,7 @@ import (
 )
 
 type Network struct {
-	Conn  *net.Conn
+	Conn  net.Conn
 }
 
 func Connect(host string) (*Network, error) {
@@ -25,9 +25,13 @@ func (n *Network) Write(data string) error {
 
 func (n *Network) Read(size int) (string, error) {
 	data := make([]byte, size)
-	n, err := n.Conn.Read(data)
+	nn, err := n.Conn.Read(data)
 	if err != nil {
-		return data, err
+		return "", err
 	}
-	return string(data[:n]), nil
+	return string(data[:nn]), nil
+}
+
+func (n *Network) Close() {
+	n.Conn.Close()
 }
