@@ -17,7 +17,10 @@ func ParseOnions(filename string) map[string]map[string]string {
 	LineScanner := bufio.NewScanner(OnionsFile)
 	re := regexp.MustCompile("[a-z2-7]{16}")
 	for LineScanner.Scan() {
-		if len(LineScanner.Text()) == 0 || !re.Match([]byte(LineScanner.Text())) {
+		if len(LineScanner.Text()) == 0 {
+			continue
+		}
+		if !re.Match([]byte(strings.Split(LineScanner.Text(), "|")[0])) {
 			continue
 		}
 		if len(strings.Split(LineScanner.Text(), "|")) < 3 {
