@@ -5,6 +5,7 @@ import (
 	"bufio"
 	"strings"
 	"fmt"
+	"regexp"
 )
 
 func ParseOnions(filename string) map[string]map[string]string {
@@ -14,8 +15,9 @@ func ParseOnions(filename string) map[string]map[string]string {
 	}
 	Onions := make(map[string]map[string]string)
 	LineScanner := bufio.NewScanner(OnionsFile)
+	re := regexp.MustCompile("[a-z2-7]{16}")
 	for LineScanner.Scan() {
-		if len(LineScanner.Text()) == 0 {
+		if len(LineScanner.Text()) == 0 || !re.Match([]byte(LineScanner.Text())) {
 			continue
 		}
 		if len(strings.Split(LineScanner.Text(), "|")) < 3 {
