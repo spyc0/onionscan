@@ -1,6 +1,8 @@
 3g2upl4pq6kufc4m.onion|DuckDuckGo|HTTP
 chatrapi7fkbzczr.onion|OnionChat|HTTP
 sss.onion|Testing|HTTP
-
+norwayrjepnjrhfi.onion|NorwegianCOM|HTTP
+zhdaxyeye5fb2auq.onion|HandStack|HTTP
+w52vrxu52ts5dfo7.onion|LuckyYou|HTTP
 
 
