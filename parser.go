@@ -11,7 +11,8 @@ import (
 func ParseOnions(filename string) map[string]map[string]string {
 	OnionsFile, err := os.Open(filename)
 	if err != nil {
-		fmt.Printf("Failed to read list file\n")
+		fmt.Printf("Failed to read list file: %s\n", err)
+		os.Exit(1)
 	}
 	Onions := make(map[string]map[string]string)
 	LineScanner := bufio.NewScanner(OnionsFile)
